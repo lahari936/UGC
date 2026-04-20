@@ -1,4 +1,6 @@
-const BASE = "/api";
+// In dev: Vite proxies /api → http://localhost:8000 (see vite.config.js)
+// In production (Vercel): set VITE_API_URL env var to your deployed backend URL
+const BASE = import.meta.env.VITE_API_URL ?? "/api";
 
 // ── Check server status ────────────────────────────────────────────────────
 export async function getStatus() {
